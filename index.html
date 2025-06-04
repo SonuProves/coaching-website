@@ -1,0 +1,535 @@
+<!-- good one -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Vision Godda - Premium Coaching</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .gradient-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .gradient-secondary {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    
+    .gradient-success {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    
+    .gradient-warm {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+    
+    .gradient-cool {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+    
+    .gradient-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      height: 100vh;
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    
+    .floating-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .pulse-glow {
+      animation: pulse-glow 2s infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+      50% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(118, 75, 162, 0.6); }
+      100% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+    }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn-premium {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-premium::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-premium:hover::before {
+      left: 100%;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gradient-to-br from-slate-50 via-white to-indigo-50 text-gray-800">
+  
+<!-- Enhanced Navbar -->
+<nav class="bg-blue-600 shadow-2xl px-6 py-4 sticky top-0 z-50 glass-effect" x-data="{ open: false }">
+  <div class="flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <div class="relative">
+        <img src="Career_vision_Logo.png" alt="Logo" class="w-14 h-14 rounded-full border-3 border-white shadow-2xl pulse-glow floating-animation">
+        <div class="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full border-2 border-white animate-pulse"></div>
+      </div>
+      <div>
+        <span class="text-3xl font-black text-white drop-shadow-2xl tracking-tight">Career Vision</span>
+        <p class="text-xs text-indigo-100 font-medium">Excellence in Education</p>
+      </div>
+    </div>
+    <div class="hidden md:flex space-x-8">
+      <a href="#about" class="text-white hover:text-yellow-300 font-semibold transition-all duration-300 hover:scale-110">About</a>
+      <a href="#courses" class="text-white hover:text-yellow-300 font-semibold transition-all duration-300 hover:scale-110">Courses</a>
+      <a href="#testimonials" class="text-white hover:text-yellow-300 font-semibold transition-all duration-300 hover:scale-110">Testimonials</a>
+      <a href="#gallery" class="text-white hover:text-yellow-300 font-semibold transition-all duration-300 hover:scale-110">Gallery</a>
+      <a href="#contact" class="text-white hover:text-yellow-300 font-semibold transition-all duration-300 hover:scale-110">Contact</a>
+    </div>
+ <div class="hidden md:block">
+      <a href="https://wa.me/918252043758" target="_blank"
+        class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition">WhatsApp</a>
+    </div>
+    <button @click="open = !open" class="md:hidden text-white hover:text-yellow-300 transition-colors">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path x-show="!open" d="M4 6h16M4 12h16M4 18h16" />
+        <path x-show="open" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  <div x-show="open" x-transition class="md:hidden mt-6 glass-effect rounded-2xl p-6 shadow-2xl">
+    <div class="flex flex-col space-y-4">
+      <a href="#about" class="text-indigo-800 hover:text-pink-600 font-semibold text-lg transition-colors">About</a>
+      <a href="#courses" class="text-indigo-800 hover:text-pink-600 font-semibold text-lg transition-colors">Courses</a>
+      <a href="#testimonials" class="text-indigo-800 hover:text-pink-600 font-semibold text-lg transition-colors">Testimonials</a>
+      <a href="#gallery" class="text-indigo-800 hover:text-pink-600 font-semibold text-lg transition-colors">Gallery</a>
+      <a href="#contact" class="text-indigo-800 hover:text-pink-600 font-semibold text-lg transition-colors">Contact</a>
+      <a href="https://wa.me/918252043758" class="gradient-success text-white text-center py-3 rounded-full font-bold shadow-lg mt-4">💬 WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Premium Hero Section -->
+<section class="gradient-hero h-screen text-white text-center py-20 px-6 relative overflow-hidden">
+  <div class="absolute inset-0 bg-black opacity-20"></div>
+  <div class="relative z-10">
+    <div class="floating-animation mb-8">
+      <img src="I_Love_CV.png" alt="Logo"
+        class="mx-auto w-32 h-32 rounded-full border-4 border-white shadow-2xl pulse-glow">
+    </div>
+    <h1 class="text-6xl md:text-7xl font-black drop-shadow-2xl mb-4 tracking-tight">
+      Career <span class="text-yellow-300">Vision</span>
+    </h1>
+    <h2 class="text-2xl md:text-3xl font-bold text-indigo-100 mb-2">Godda's Premier Coaching Institute</h2>
+    <p class="text-xl md:text-2xl mt-4 max-w-2xl mx-auto drop-shadow-lg font-medium text-indigo-100">
+      🎯 NEET | JEE | XI & XII – Science Coaching Excellence
+    </p>
+    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+      <a href="https://wa.me/918252043758"
+        class="btn-premium text-white px-8 py-4 rounded-full font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center space-x-3">
+        <span class="text-2xl">📞</span>
+        <span>Contact Us Now</span>
+      </a>
+      <a href="#courses"
+        class="glass-effect text-white px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        Explore Courses
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Premium About Section -->
+<section id="about" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gradient mb-6">Why Choose Career Vision?</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Transform your academic dreams into reality with Godda's most trusted coaching institute. We don't just teach - we inspire excellence.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-xl border border-indigo-100">
+        <div class="gradient-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+          <span class="text-3xl text-white">🎯</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Expert Faculty</h3>
+        <p class="text-gray-600 leading-relaxed">Experienced teachers with proven track records in NEET & JEE preparation</p>
+      </div>
+      
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-xl border border-pink-100">
+        <div class="gradient-secondary w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+          <span class="text-3xl text-white">📚</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Comprehensive Material</h3>
+        <p class="text-gray-600 leading-relaxed">Carefully curated study materials and practice tests for complete preparation</p>
+      </div>
+      
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-xl border border-cyan-100">
+        <div class="gradient-success w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+          <span class="text-3xl text-white">🏆</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Proven Results</h3>
+        <p class="text-gray-600 leading-relaxed">Consistent top ranks and high success rates in competitive examinations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Courses Section -->
+<section id="courses" class="py-20 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gradient mb-6">Our Premium Courses</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose from our expertly designed programs tailored for your success</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-transparent hover:border-indigo-200">
+        <div class="gradient-primary p-8 text-white text-center">
+          <div class="text-6xl mb-4">🩺</div>
+          <h3 class="text-3xl font-bold">NEET</h3>
+          <p class="text-indigo-100 mt-2">Medical Entrance</p>
+        </div>
+        <div class="p-8">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Complete NEET Preparation</h4>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Physics Deep Concepts</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Chemistry Mastery</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Biology Excellence</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Mock Tests & Analysis</li>
+          </ul>
+          <button class="mt-6 w-full gradient-primary text-white py-3 rounded-2xl font-bold hover:shadow-xl transition-all duration-300">
+            Learn More
+          </button>
+        </div>
+      </div>
+      
+      <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-transparent hover:border-pink-200">
+        <div class="gradient-secondary p-8 text-white text-center">
+          <div class="text-6xl mb-4">⚡</div>
+          <h3 class="text-3xl font-bold">JEE</h3>
+          <p class="text-pink-100 mt-2">Engineering Entrance</p>
+        </div>
+        <div class="p-8">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Advanced JEE Coaching</h4>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Advanced Mathematics</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Physics Problem Solving</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Chemistry Applications</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> IIT-JEE Strategy</li>
+          </ul>
+          <button class="mt-6 w-full gradient-secondary text-white py-3 rounded-2xl font-bold hover:shadow-xl transition-all duration-300">
+            Learn More
+          </button>
+        </div>
+      </div>
+      
+      <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-transparent hover:border-cyan-200">
+        <div class="gradient-success p-8 text-white text-center">
+          <div class="text-6xl mb-4">📖</div>
+          <h3 class="text-3xl font-bold">XI & XII</h3>
+          <p class="text-cyan-100 mt-2">Board Preparation</p>
+        </div>
+        <div class="p-8">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Board Excellence Program</h4>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Complete Syllabus Coverage</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Board Exam Strategy</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Science Stream Focus</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Regular Assessments</li>
+          </ul>
+          <button class="mt-6 w-full gradient-success text-white py-3 rounded-2xl font-bold hover:shadow-xl transition-all duration-300">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Testimonials -->
+<section id="testimonials" class="py-20 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gradient mb-6">Success Stories</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from our successful students and proud parents</p>
+    </div>
+    
+    <div class="grid gap-8 md:grid-cols-2">
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-xl border-l-4 border-indigo-500">
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+            R
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-800">Ravi Kumar</h4>
+            <p class="text-indigo-600 font-semibold">NEET Topper</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed italic">
+          "Godda ka sabse behtar coaching centre hai Career Vision. Yahan ke teachers ka teaching style lajawab hai — especially Physics, Chemistry, aur Biology. Har topic ko real-life examples ke sath explain kiya jata hai, jisse bachchon ko concepts deeply samajh mein aate hain. NEET preparation ke liye toh yeh best jagah hai Godda mein!"
+        </p>
+        <div class="flex text-yellow-400 mt-4">
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-xl border-l-4 border-pink-500">
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 gradient-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+            J
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-800">Jyoti Kumari</h4>
+            <p class="text-pink-600 font-semibold">Proud Parent</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed italic">
+          "Yahan ke sabhi teachers apne subject ke experts hain. Har ek student par individual focus diya jata hai, aur difficult topics ko bhi itne asaan tareeke se samjhaya jata hai ki bachche confidently prepare karte hain. Parents ke liye peace of mind milta hai ki unka baccha safe haathon mein hai. Truly recommended for NEET, JEE, and Class 11–12 Science students!"
+        </p>
+        <div class="flex text-yellow-400 mt-4">
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Gallery -->
+<section id="gallery" class="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gradient mb-6">📷 Our Gallery</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Witness the excellence in our state-of-the-art facilities and proud moments</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-hover rounded-3xl overflow-hidden shadow-2xl">
+        <img src="Dist_topper_07th_rank.png" alt="District Topper" class="w-full h-64 object-cover">
+        <div class="gradient-primary p-4">
+          <h3 class="text-white font-bold text-lg">🏆 District Topper - 7th Rank</h3>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-3xl overflow-hidden shadow-2xl">
+        <img src="Screenshot 2025-06-04 113241.png" alt="Achievement" class="w-full h-64 object-cover">
+        <div class="gradient-secondary p-4">
+          <h3 class="text-white font-bold text-lg">🎯 Outstanding Results</h3>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-3xl overflow-hidden shadow-2xl">
+        <img src="Screenshot 2025-06-04 113254.png" alt="Success Stories" class="w-full h-64 object-cover">
+        <div class="gradient-success p-4">
+          <h3 class="text-white font-bold text-lg">📈 Success Analytics</h3>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-3xl overflow-hidden shadow-2xl">
+        <img src="cv_classroom_1_.png" alt="Modern Classroom" class="w-full h-64 object-cover">
+        <div class="gradient-warm p-4">
+          <h3 class="text-white font-bold text-lg">🏫 Premium Classrooms</h3>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-3xl overflow-hidden shadow-2xl">
+        <img src="cv_classroom_2_.png" alt="Learning Environment" class="w-full h-64 object-cover">
+        <div class="gradient-cool p-4">
+          <h3 class="text-white font-bold text-lg">📚 Learning Environment</h3>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-3xl overflow-hidden shadow-2xl">
+        <img src="CV_success_time_1.png" alt="Success Moments" class="w-full h-64 object-cover">
+        <div class="gradient-primary p-4">
+          <h3 class="text-white font-bold text-lg">🎉 Celebration Moments</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Contact Form -->
+<section id="contact" class="py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gradient mb-6">Get in Touch</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Ready to start your journey to success? Contact us today!</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <div class="flex items-center space-x-4">
+          <div class="gradient-primary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+            📱
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800">WhatsApp</h3>
+            <p class="text-gray-600">+91 82520 43758</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <div class="gradient-secondary w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+            📧
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800">Email</h3>
+            <p class="text-gray-600">sonukrnb0@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <div class="gradient-success w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+            📍
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800">Location</h3>
+            <p class="text-gray-600">Godda, Jharkhand</p>
+          </div>
+        </div>
+      </div>
+
+      <form action="https://formsubmit.co/sonukrnb0@gmail.com" method="POST" class="card-hover bg-white rounded-3xl p-8 shadow-2xl border border-indigo-100">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thankyou.html">
+
+        <div class="space-y-6">
+          <input type="text" name="name" placeholder="Your Name" 
+            class="w-full border-2 border-gray-200 p-4 rounded-2xl focus:border-indigo-500 focus:outline-none transition-colors" required />
+          
+          <input type="email" name="email" placeholder="Your Email" 
+            class="w-full border-2 border-gray-200 p-4 rounded-2xl focus:border-indigo-500 focus:outline-none transition-colors" required />
+          
+          <textarea name="message" rows="4" placeholder="Your Message" 
+            class="w-full border-2 border-gray-200 p-4 rounded-2xl focus:border-indigo-500 focus:outline-none transition-colors" required></textarea>
+          
+          <button type="submit" class="w-full btn-premium text-white py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300">
+            Send Message 🚀
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Location Section -->
+<section class="py-20 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gradient mb-6">📍 Visit Our Campus</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience excellence at our state-of-the-art facility in Godda</p>
+    </div>
+
+    <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-2xl">
+      <div class="h-96 relative">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8185762344784!2d87.21312901543194!3d24.836709684060167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f067429b899a1f%3A0x4025d3cf46436dc!2sGodda%2C%20Jharkhand%20814433!5e0!3m2!1sen!2sin!4v1717478312523"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="p-8 text-center">
+        <a href="https://maps.app.goo.gl/gjfj2zv2fnFvBu8a6" target="_blank"
+          class="btn-premium text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center space-x-3">
+          <span class="text-xl">🚗</span>
+          <span>Get Directions on Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Footer -->
+<footer class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Brand -->
+      <div class="text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start space-x-3">
+          <img src="Career_vision_Logo.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-white">
+          <h3 class="text-xl font-bold">Career Vision</h3>
+        </div>
+        <p class="mt-4 text-gray-300">Empowering students in Godda with quality coaching for NEET, JEE, and board exams.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="text-center">
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#about" class="hover:text-orange-400 transition">About</a></li>
+          <li><a href="#courses" class="hover:text-orange-400 transition">Courses</a></li>
+          <li><a href="#testimonials" class="hover:text-orange-400 transition">Testimonials</a></li>
+          <li><a href="#gallery" class="hover:text-orange-400 transition">Gallery</a></li>
+          <li><a href="#contact" class="hover:text-orange-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="text-center md:text-right">
+        <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+        <p class="text-gray-300">📍 Near Court Campus, Godda, Jharkhand</p>
+        <p class="text-gray-300">📞 <a href="tel:+918252043758" class="hover:text-green-400">+91 82520 43758</a></p>
+        <p class="text-gray-300">📧 <a href="mailto:careervisiongodda@gmail.com" class="hover:text-green-400">careervisiongodda@gmail.com</a></p>
+        <div class="mt-4 flex justify-center md:justify-end space-x-4">
+          <a href="https://www.instagram.com/" target="_blank" class="hover:text-pink-400">
+            <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M7.5 2A5.5 5.5 0 002 7.5v9A5.5 5.5 0 007.5 22h9a5.5 5.5 0 005.5-5.5v-9A5.5 5.5 0 0016.5 2h-9zM12 7a5 5 0 110 10 5 5 0 010-10zm6.5-.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
+          </a>
+          <a href="https://wa.me/918252043758" target="_blank" class="hover:text-green-400">
+            <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M20.5 3.5a11.3 11.3 0 00-17 13.4L2 22l5.3-1.4a11.3 11.3 0 0013.2-17zM12 20a9 9 0 01-4.6-1.3l-.3-.2-3.2.9.9-3.1-.2-.3a9 9 0 0114-10.5A9 9 0 0112 20zm4.2-6.7c-.2-.1-1.2-.6-1.3-.7-.2-.1-.3-.1-.5.1l-.8 1c-.1.1-.2.2-.5.1a7.1 7.1 0 01-2.4-1.5 7.1 7.1 0 01-1.5-2.4c0-.3 0-.4.1-.5l1-0.8c.2-.2.2-.3.1-.5l-.7-1.3c-.1-.3-.3-.3-.5-.3l-.4-.1a1 1 0 00-.7.3c-.2.2-.7.7-.7 1.7 0 1.1.8 2.1 1.1 2.5.3.3 1.6 2.4 3.9 3.2 1.5.5 1.9.4 2.3.4.4 0 .8-.2.9-.6l.1-.4c.1-.2.1-.4-.1-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 border-t border-blue-700 pt-6 text-center text-sm text-gray-300">
+      © 2025 Career Vision Godda. All rights reserved.
+    </div>
+  </div>
+</footer>
